@@ -16,7 +16,10 @@ def list_buckets():
 
 @click.command('list-bucket-objects')
 def list_bucket_objects():
-    pass
+    "Get Objects in s3"
+    for obj in s3.Bucket('automatingtj-boto3').objects.all():
+        print(obj)
+
 
 if __name__ == '__main__':
     cli()
