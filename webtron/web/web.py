@@ -14,5 +14,9 @@ def list_buckets():
     for bucket in s3.buckets.all():
         print(bucket)
 
+@click.command('list-bucket-objects')
+def list_bucket_objects():
+    pass
+
 if __name__ == '__main__':
     cli()
