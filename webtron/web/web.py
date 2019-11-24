@@ -15,9 +15,10 @@ def list_buckets():
         print(bucket)
 
 @cli.command('list-bucket-objects')
-def list_bucket_objects():
+@click.argument('bucket')
+def list_bucket_objects(bucket):
     "Get Objects in s3"
-    for obj in s3.Bucket('automatingtj-boto3').objects.all():
+    for obj in s3.Bucket(bucket).objects.all():
         print(obj)
 
 
